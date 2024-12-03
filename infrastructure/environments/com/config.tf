@@ -27,10 +27,10 @@ provider "aws" {
   allowed_account_ids = [var.aws_account_id]
   region              = var.aws_default_region
 
-  assume_role {
-    assume_role.role_arn = "arn:aws:iam::${var.aws_account_id}:role/AssumableAdmin"
-  }
-
+ provider "aws" {
+  region = var.aws_region
+  assume_role.role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin"
+  
   default_tags {
     tags = {
       terraform  = true
