@@ -28,9 +28,12 @@ provider "aws" {
   allowed_account_ids = [var.aws_account_id]
   region              = var.aws_default_region
 
-  provider "aws" {
+provider "aws" {
   region = var.aws_region
-  assume_role.role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin"
+  assume_role.role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin""
+  }
+}
+
 
   default_tags {
     tags = {

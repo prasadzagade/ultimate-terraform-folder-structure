@@ -27,7 +27,9 @@ provider "aws" {
 
  provider "aws" {
   region = var.aws_region
-  assume_role.role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin"
+  assume_role.role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin""
+  }
+}
 
   default_tags {
     tags = {
