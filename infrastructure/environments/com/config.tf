@@ -4,8 +4,10 @@ terraform {
     bucket         = "terraform-tfstate-payment"
     encrypt        = true
     key            = "infrastructure/environments/com/ultimate-terraform-folder-strucutre/common.tfstate"
-    region         = "eu-north-1"
-    role_arn       = "arn:aws:iam::007400497555:user/project_user"
+    region         = "ap-south-1"
+    assume_role {
+      role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin"
+    }
   }
 
   required_providers {
