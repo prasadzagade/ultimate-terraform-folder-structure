@@ -5,7 +5,7 @@ terraform {
     encrypt        = true
     key            = "infrastructure/environments/pro/ultimate-terraform-folder-strucutre/app.tfstate"
     region         = "eu-north-1"
-    role_arn       = "arn:aws:iam::<bastion_account_id>:role/TerraformState"
+    role_arn       = "arn:aws:iam::007400497555:user/project_user"
   }
 
   required_providers {
