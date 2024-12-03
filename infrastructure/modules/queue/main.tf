@@ -7,7 +7,7 @@ data "terraform_remote_state" "common" {
     encrypt        = true
     key            = "infrastructure/environments/com/ultimate-terraform-folder-strucutre/common.tfstate"
     region         = "eu-north-1"
-    role_arn       = "arn:aws:iam::007400497555:user/project_user"
+    assume_role.role_arn       = "arn:aws:iam::007400497555:user/project_user"
   }
 }
 

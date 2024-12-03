@@ -3,10 +3,14 @@ terraform {
     dynamodb_table = "terraform-locks"
     bucket         = "terraform-tfstate-payment"
     encrypt        = true
-    key            = "infrastructure/environments/pro/ultimate-terraform-folder-strucutre/db.tfstate"
+    key            = "infrastructure/environments/com/ultimate-terraform-folder-strucutre/common.tfstate"
     region         = "eu-north-1"
-    role_arn       = "arn:aws:iam::007400497555:user/project_user"
+    assume_role {
+      role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin"
+    }
   }
+}
+
 
   required_providers {
     aws = {
@@ -21,7 +25,7 @@ provider "aws" {
   region              = var.aws_default_region
 
   assume_role {
-    role_arn = "arn:aws:iam::${var.aws_account_id}:role/AssumableAdmin"
+    assume_role.role_arn = "arn:aws:iam::${var.aws_account_id}:role/AssumableAdmin"
   }
 
   default_tags {

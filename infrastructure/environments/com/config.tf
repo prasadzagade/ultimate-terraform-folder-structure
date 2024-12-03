@@ -4,11 +4,16 @@ terraform {
     bucket         = "terraform-tfstate-payment"
     encrypt        = true
     key            = "infrastructure/environments/com/ultimate-terraform-folder-strucutre/common.tfstate"
-    region         = "ap-south-1"
+    region         = "eu-north-1"
     assume_role {
       role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin"
     }
   }
+}
+
+}
+}
+
 
   required_providers {
     aws = {
@@ -23,7 +28,7 @@ provider "aws" {
   region              = var.aws_default_region
 
   assume_role {
-    role_arn = "arn:aws:iam::${var.aws_account_id}:role/AssumableAdmin"
+    assume_role.role_arn = "arn:aws:iam::${var.aws_account_id}:role/AssumableAdmin"
   }
 
   default_tags {
