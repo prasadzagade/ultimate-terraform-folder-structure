@@ -6,7 +6,7 @@ terraform {
     key            = "infrastructure/environments/com/ultimate-terraform-folder-strucutre/common.tfstate"
     region         = "eu-north-1"
     assume_role {
-      role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin"
+      role_arn = "arn:aws:iam::007400497555:user/project_user"
     }
   }
 }
@@ -27,7 +27,7 @@ provider "aws" {
 
  provider "aws" {
   region = var.aws_region
-  assume_role.role_arn = "arn:aws:iam::007400497555:role/AssumableAdmin""
+  assume_role.role_arn = "arn:aws:iam::007400497555:user/project_user""
   }
 }
 
